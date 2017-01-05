@@ -1,0 +1,2 @@
+# contechs
+Tech Jargon Dictionary
