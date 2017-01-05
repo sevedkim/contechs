@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
 
   # create mgmt node
   config.vm.define :mgmt do |mgmt_config|
-      mgmt_config.vm.box = "bento/centos-6.7"
+      mgmt_config.vm.box = "centos/7"
       mgmt_config.vm.hostname = "mgmt"
       mgmt_config.vm.network :private_network, ip: "10.99.99.10"
       mgmt_config.vm.provider "virtualbox" do |vb|
@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
   # create web servers
   (1..2).each do |i|
     config.vm.define "web#{i}" do |node|
-        node.vm.box = "bento/centos-6.7"
+        node.vm.box = "centos/7"
         node.vm.hostname = "web#{i}"
         node.vm.network :private_network, ip: "10.99.99.2#{i}"
         node.vm.network "forwarded_port", guest: 80, host: "808#{i}"

@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 
 # install the epel-release RPM (http://fedoraproject.org/wiki/EPEL)
-#sudo rpm -iUvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm
-sudo yum install epel-release
+sudo yum -y install epel-release
 
 # install ansible (http://docs.ansible.com/intro_installation.html)
-sudo yum -y update
 sudo yum -y install ansible
 
 # copy examples into /home/vagrant (from inside the mgmt node)
