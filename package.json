@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --colors --progress",
+    "build": "webpack --colors --progress --config ./config/webpack.config.js",
     "build:watch": "npm run build -- --watch",
-    "dev-server": "webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev-server": "webpack-dev-server --config ./config/webpack.config.js",
+    "test": "mocha config/jsdom.js test/*.spec.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "chai": "^3.5.0",
     "enzyme": "^2.7.0",
     "express": "^4.14.0",
+    "jsdom": "^9.9.1",
     "mocha": "^3.2.0",
     "react-addons-test-utils": "^15.4.2",
     "sinon": "^1.17.7",

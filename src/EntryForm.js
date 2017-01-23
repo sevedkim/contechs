@@ -1,39 +1,42 @@
-//EntryForm.js
+//entryForm.js
 import React from 'react';
+import Entry from './entry';
 
 class EntryForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = { term: '', definition: ''};
-    this.handleTermChange = this.handleTermChange.bind(this);
-    this.handleDefinitionChange = this.handleDefinitionChange.bind(this);
+    this.state = { term: "", definition: ""};
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  handleTermChange(e){
-    this.setState({ term: e.target.value });
+  handleChange(){
+    this.setState({
+      term: this.refs.termField.value,
+      definition: this.refs.definitionField.value
+    })
   }
-  handleDefinitionChange(e){
-    this.setState({ definition: e.target.value });
-  }
+
   handleSubmit(e){
     e.preventDefault();
-    console.log(`${this.state.term} : "${this.state.definition}"`)
-    this.setState({ term: ''})
-    this.setState({ definition: ''})
+    const {postEntry} = this.props;
+    postEntry({term: this.state.term, definition: this.state.definition});
+    this.setState({ term: "", definition: ""})
   }
   render(){
     return(
       <form onSubmit={ this.handleSubmit }>
         <input
+          ref="termField"
           type='text'
           placeholder='Term'
           value={ this.state.term }
-          onChange={ this.handleTermChange } />
+          onChange={ this.handleChange } />
         <input
+          ref="definitionField"
           type='text'
           placeholder='Definition'
           value={ this.state.definition }
-          onChange={ this.handleDefinitionChange } />
+          onChange={ this.handleChange } />
         <input
           type='submit'
           value='Submit' />
@@ -41,5 +44,6 @@ class EntryForm extends React.Component {
     )
   }
 }
+
 
 export default EntryForm;
