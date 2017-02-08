@@ -1,6 +1,6 @@
 //app.js
 import React from 'react';
-import EntryForm from './entryForm';
+import entryForm from './entryForm';
 import EntryList from './entryList';
 
 class App extends React.Component {
