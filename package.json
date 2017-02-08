@@ -7,7 +7,7 @@
     "build": "webpack --colors --progress --config ./config/webpack.config.js",
     "build:watch": "npm run build -- --watch",
     "dev-server": "webpack-dev-server --config ./config/webpack.config.js",
-    "test": "mocha config/jsdom.js test/entry.spec.js"
+    "test": "mocha config/jsdom.js test/*.spec.js"
   },
   "repository": {
     "type": "git",
