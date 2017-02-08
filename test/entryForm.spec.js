@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import EntryForm from 'src/entryForm';
+import EntryForm from '../src/entryForm';
 
 describe('Entry Form', () => {
 
