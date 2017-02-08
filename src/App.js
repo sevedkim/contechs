@@ -1,7 +1,7 @@
 //app.js
 import React from 'react';
-import EntryForm from './entryForm.js';
-import EntryList from './entryList';
+import EntryForm from 'src/entryForm';
+import EntryList from 'src/entryList';
 
 class App extends React.Component {
   constructor(props){
