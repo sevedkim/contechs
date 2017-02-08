@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import Entry from '../src/entry';
+import Entry from 'src/entry';
 
 describe('Entry', () => {
 
